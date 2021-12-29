@@ -1,0 +1,108 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChessBase"
+        xmlns:Models="clr-namespace:ChessBase.Models" x:Class="ChessBase.MainWindow"
+        mc:Ignorable="d"
+        Title="Chess base" Height="600.8" Width="994.133" Loaded="Window_Loaded"
+        Background="#FF20481C">
+
+    <Grid Margin="0,0,-6,-19.8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="36"/>
+            <RowDefinition Height="auto" MinHeight="243.2"/>
+            <RowDefinition Height="527.2"/>
+            <RowDefinition Height="102.4"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="520" />
+            <ColumnDefinition Width="474.4"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid  Grid.Column="0" Margin="0,0,0.4,1" Grid.ColumnSpan="2" Background="#FF122D0F">
+            <Grid.Effect>
+                <DropShadowEffect Color="#FF141414" BlurRadius="0" Opacity="0"/>
+            </Grid.Effect>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="83*" />
+                <ColumnDefinition Width="135*" />
+                <ColumnDefinition Width="134*" />
+                <ColumnDefinition Width="642*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- pages-->
+            <Image Grid.Column="0" Height="50" Width="50" Source="Images/chess.png" Margin="10, 10"></Image>
+
+            <!-- Button for tournaments-->
+            <Button Grid.Column="1" Content="Tournaments" Foreground="white" FontSize="14" Click="Tournement_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#FF153811"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!-- Button for players -->
+            <Button Grid.Column="2" Content="Players" Foreground="white" FontSize="14" Click="Player_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#FF153811"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Column="3" Content="Employees" Foreground="white" FontSize="14" Click="Employee_Click" Margin="0,0,508.4,0.4">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#FF153811"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <ContentControl x:Name="contentControl" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="0,70,0.4,259.8"/>
+    </Grid>
+</Window>
